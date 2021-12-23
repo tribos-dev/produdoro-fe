@@ -1,0 +1,19 @@
+.caixa {
+  width: 350px;
+  height: 250px;
+  border: solid 1px black;
+  border-radius: 2px;
+  background-color: rgb(255, 255, 255, 0.1);
+  margin: 50px auto;
+  text-align: center;
+
+}
+.btn{
+  color: white;
+  margin: 10px;
+  border: none;
+  font-size: 10px;
+}
+.btn:hover{
+  background-color: rgba(12, 11, 11, 0.911) !important;
+}
