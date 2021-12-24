@@ -1,6 +1,6 @@
-.caixa {
-  width: 350px;
-  height: 250px;
+.painel-produdoro {
+  width: 630px;
+  height: 485px;
   border: solid 1px black;
   border-radius: 2px;
   background-color: rgb(255, 255, 255, 0.1);
