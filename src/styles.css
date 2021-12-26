@@ -2,6 +2,15 @@
 
 html, body {
    height: 100%;
-   background-color: rgb(217, 85, 80)
 }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@font-face {
+   font-family: Cabin-Regular;
+   src: url(assets/fontes/Cabin-Regular.ttf);
+}
+
+@font-face {
+   font-family: Cabin-Bold;
+   src: url(assets/fontes/Cabin-Bold.ttf);
+}
