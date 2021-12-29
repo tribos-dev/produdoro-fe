@@ -1,11 +1,12 @@
 .fundo-tela{
   background-color:#001228 ;
-  margin: auto;
-  display:inline-block
+  margin: 0;
+  box-sizing: border-box;
 }
 .painel-produdoro {
   max-width: 630px;
   min-height: 485px;
+  margin: 10px auto;
   border-radius: 10px;
   background-color: #0D2A42;
 }
@@ -50,3 +51,51 @@ button:focus {
   color: white;
 }
 
+@media screen  and (max-width: 480px) {
+  .fundo-tela {
+    width: auto;
+    background-color: #001228;
+    flex-direction: row;
+
+  }
+  .painel-produdoro {
+    width: 90%;
+  }
+   .botoes-status {
+  white-space: nowrap;
+  text-align: center;
+}
+  .btn-curta {
+    word-wrap: break-word;
+
+  }
+  .btn {
+    font-size: 1.65em;
+    }
+  #tempo {
+    font-size: 9em;
+    margin: 25px;
+  }
+}
+@media (max-width: 431px) {
+  .btn {
+    font-size: 19px;
+  }
+  #tempo {
+    font-size: 7em;
+    margin: 30px;
+}
+}
+@media (max-width: 345px) {
+  .btn {
+    font-size: 17px;
+  }
+  #tempo {
+    font-size: 5em;
+}
+}
+@media (max-width: 307px) {
+  .btn {
+    font-size: 15px;
+  }
+}
