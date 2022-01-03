@@ -9,7 +9,6 @@ export class FocosComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(){}
 
 }
