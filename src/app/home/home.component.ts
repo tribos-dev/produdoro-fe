@@ -17,10 +17,10 @@ export class HomeComponent implements OnInit {
   }
 
   config(){
-    this.router.navigate(["home","configurar"]);
+    this.router.navigate(["/configurar"]);
   }
 
   login(){
-    this.router.navigate(["home", "login"])
+    this.router.navigate(["/login"])
   }
 }
