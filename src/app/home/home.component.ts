@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   }
 
   config(){
-    this.router.navigate(["home", "configurar"]);
+    this.router.navigate(["home","configurar"]);
   }
 
   login(){
