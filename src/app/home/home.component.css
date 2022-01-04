@@ -22,7 +22,15 @@ p{
 }
 
 .config{
-    margin: 0 5rem 0 6rem;
+    margin: 0 5rem 1rem 6rem;
+    background-color: transparent;
+    border: none;
+}
+
+.login{
+    margin-bottom: 1rem;
+    background-color: transparent;
+    border: none;
 }
 
 .pomodoro{
