@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './foco.component.html',
   styleUrls: ['./foco.component.css']
 })
-export class FocosComponent implements OnInit {
+export class FocoComponent implements OnInit {
 
   constructor() { }
 
