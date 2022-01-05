@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ConfigurarComponent } from '../configurar/configurar.component';
 
 @Component({
   selector: 'app-home',
