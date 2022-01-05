@@ -8,6 +8,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { ConfigurarComponent } from './configurar/configurar.component';
+import { CompartilhadoModule } from './compartilhado/compartilhado.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ConfigurarComponent } from './configurar/configurar.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    CompartilhadoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
