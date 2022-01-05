@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-focos',
-  templateUrl: './focos.component.html',
-  styleUrls: ['./focos.component.css']
+  selector: 'app-foco',
+  templateUrl: './foco.component.html',
+  styleUrls: ['./foco.component.css']
 })
 export class FocosComponent implements OnInit {
 

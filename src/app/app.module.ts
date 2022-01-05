@@ -5,7 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { ProdudoroModule } from './PP-2-FE-usuario-muda-status/produdoro/produdoro/produdoro.module';
+import { ProdudoroModule } from './produdoro/produdoro.module';
+
 
 @NgModule({
   declarations: [
