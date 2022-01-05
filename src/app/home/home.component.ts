@@ -9,17 +9,8 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   constructor(
-    private router:Router
   ) { }
 
   ngOnInit(): void {
-  }
-
-  config(){
-    this.router.navigate(["/configurar"]);
-  }
-
-  login(){
-    this.router.navigate(["/login"])
   }
 }

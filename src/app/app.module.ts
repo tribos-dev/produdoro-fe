@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
-import { CadastroComponent } from './cadastro/cadastro.component';
-import { ConfigurarComponent } from './configurar/configurar.component';
+import { CadastroComponent } from './home/cadastro/cadastro.component';
+import { ConfigurarComponent } from './home/configurar/configurar.component';
 import { CompartilhadoModule } from './compartilhado/compartilhado.module';
 
 @NgModule({
