@@ -1,0 +1,102 @@
+.fundo-tela{
+    background-color:#51a855;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .painel-produdoro {
+    max-width: 480px;
+    min-height: 312px;
+    margin: 10px auto;
+    border-radius: 10px;
+    background-color: #62b166;
+  }
+  
+  button:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+  }
+  
+  .btn{
+    color: white;
+    border: none;
+    border-radius: 10px;
+    border-style: none;
+    font-family: 'Cabin-Regular';
+    font-size: 20px;
+    box-sizing: border-box;
+  
+  }
+  .btn:hover{
+    background: none rgba(0, 0, 0, 0.15);
+    opacity: 1;
+  }
+  
+  .btn-iniciar-pausar{
+    background: white;
+    width: 130px;
+    height: 60px;
+    border-radius: 10px;
+    margin: auto;
+    border-style: none;
+    font-family: 'Cabin-Bold';
+    font-size: 20px;
+    color:#51a855;
+  }
+  
+  #tempo {
+    margin: auto;
+    font-family: 'Cabin-Regular';
+    font-size: 100px;
+    color: white;
+  }
+  
+  @media screen  and (max-width: 480px) {
+    .fundo-tela {
+      width: auto;
+      background-color: #001228;
+      flex-direction: row;
+  
+    }
+    .painel-produdoro {
+      width: 90%;
+    }
+     .botoes-status {
+    white-space: nowrap;
+    text-align: center;
+  }
+    .btn-curta {
+      word-wrap: break-word;
+  
+    }
+    .btn {
+      font-size: 1.65em;
+      }
+    #tempo {
+      font-size: 9em;
+      margin: 25px;
+    }
+  }
+  @media (max-width: 431px) {
+    .btn {
+      font-size: 19px;
+    }
+    #tempo {
+      font-size: 7em;
+      margin: 30px;
+  }
+  }
+  @media (max-width: 345px) {
+    .btn {
+      font-size: 17px;
+    }
+    #tempo {
+      font-size: 5em;
+  }
+  }
+  @media (max-width: 307px) {
+    .btn {
+      font-size: 15px;
+    }
+  }
+  
