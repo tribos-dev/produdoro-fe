@@ -82,3 +82,93 @@ small{
     color: white;
     text-decoration: underline;
 }
+
+@media screen and (max-width: 1024px) {
+    .title{
+        font-size: 1rem;
+        margin: 0 0 0.5rem 7rem;
+        padding-top: 0.7rem;
+    }
+
+    .cadastro{
+        margin: 0 46.2rem 0 1rem;
+    }
+
+    .name{
+        margin: 0.2rem 0 0.2rem 0;
+        font-size: 0.7rem;
+    }
+
+    .inputs{ 
+        margin: 0 46.2rem 0 1rem;
+        padding: 0.5rem 0 0 0;
+    }
+
+    input{
+        width: 16rem;
+        padding: 0 0 0 0;
+        margin-left: 0.3rem;
+    }
+
+    input::placeholder{
+        font-size: 0.5rem;
+        padding: 0 0 0.4rem 0.5rem;
+    }
+
+    small{
+        font-size: 0.3rem;
+        margin: 0 0 0.5rem 0.5rem;
+    }
+
+    .concluir{
+        margin: 0 0 0.5rem 0.5rem;
+        padding: 0.5rem 6.8rem 0.5rem 6.8rem;
+        font-size: 0.6rem;
+    }
+
+    .possui{
+        
+        font-size: 0.4rem;
+        margin: 0.5rem 45.2rem 0 0;
+    }
+
+    .connect{
+        margin-left: 8rem;
+        font-size: 0.4rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .title{
+        font-size: 0.8rem;
+        margin: 0 0 0.5rem 5.5rem;
+        padding-top: 0.3rem;
+    }
+
+    .cadastro{
+        margin: 0 34.3rem 0 0.5rem;
+        padding: 0 0 0 0;
+    }
+
+    .name{
+        margin: 0.2rem 0 0.2rem 0.5rem;
+        font-size: 0.7rem;
+    }
+
+    .inputs{ 
+        margin: 0 34.3rem 0 0.5rem;
+        padding: 0.5rem 0 0 0;
+    }
+
+    input{
+        width: 12.5rem;
+        padding: 0 0 0 0;
+        margin-left: 0.3rem;
+    }
+
+    .concluir{
+        margin: 0 0 0.5rem 0.4rem;
+        padding: 0.5rem 5rem 0.5rem 5.2rem;
+        font-size: 0.6rem;
+    }
+}
