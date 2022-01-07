@@ -18,6 +18,10 @@ const routes: Routes = [
     path: 'configurar',
     component: ConfigurarComponent
   
+  },
+  {
+    path: 'cadastro',
+    component: CadastroComponent
   }
 ];
 

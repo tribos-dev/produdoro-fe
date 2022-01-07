@@ -20,6 +20,6 @@ export class HeaderComponent implements OnInit {
   }
 
   login(){
-    this.router.navigate(["/login"])
+    this.router.navigate(["/cadastro"])
   }
 }
