@@ -4,8 +4,8 @@
   box-sizing: border-box;
 }
 .painel-produdoro {
-  max-width: 630px;
-  min-height: 485px;
+  max-width: 480px;
+  min-height: 312px;
   margin: 10px auto;
   border-radius: 10px;
   background-color: #0D2A42;
@@ -23,7 +23,7 @@ button:focus {
   border-radius: 10px;
   border-style: none;
   font-family: 'Cabin-Regular';
-  font-size: 30px;
+  font-size: 20px;
   box-sizing: border-box;
 
 }
@@ -35,7 +35,7 @@ button:focus {
 .btn-iniciar-pausar{
   background: white;
   width: 170px;
-  height: 80px;
+  height: 60px;
   border-radius: 10px;
   margin: auto;
   border-style: none;
@@ -47,7 +47,7 @@ button:focus {
 #tempo {
   margin: auto;
   font-family: 'Cabin-Regular';
-  font-size: 150px;
+  font-size: 100px;
   color: white;
 }
 
