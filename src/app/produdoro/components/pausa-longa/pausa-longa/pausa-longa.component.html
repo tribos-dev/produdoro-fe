@@ -3,7 +3,7 @@
       <div class="botoes-status">
         <button routerLink="/foco" type="button" class="btn">Foco</button>
         <button routerLink="/pausa-curta" type="button" class="btn btn-curta">Pausa Curta</button>
-        <button routerLink="/pausa-longa" type="button" class="btn">Pausa Longa</button>
+        <button routerLink="/pausa-longa" type="button" id="botao-pausaLonga" class="btn">Pausa Longa</button>
       </div>
       <div id="tempo" class="d-flex justify-content-center">
         <countdown #countdown [config]="{ leftTime: 900, format: 'mm:ss', demand:true }"></countdown>

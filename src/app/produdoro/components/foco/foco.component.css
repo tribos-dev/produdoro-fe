@@ -15,6 +15,7 @@ button:focus {
   box-shadow: 0 0 0 0;
   border: 0 none;
   outline: 0;
+  transform: scale(1.1);
 }
 
 .btn{
@@ -23,13 +24,9 @@ button:focus {
   border-radius: 10px;
   border-style: none;
   font-family: 'Cabin-Regular';
-  font-size: 20px;
+  font-size: 15px;
   box-sizing: border-box;
 
-}
-.btn:hover{
-  background: none rgba(0, 0, 0, 0.15);
-  opacity: 1;
 }
 
 .btn-iniciar-pausar{
@@ -39,6 +36,13 @@ button:focus {
   border-radius: 10px;
   margin: auto;
   border-style: none;
+}
+
+#botao-foco{
+  background: rgba(0, 0, 0, 0.15);
+  opacity: 1;
+  font-family: 'Cabin-Bold';
+  font-size: 18px;
 }
 
 #tempo {
