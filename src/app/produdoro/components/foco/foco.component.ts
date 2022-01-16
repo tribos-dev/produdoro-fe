@@ -6,9 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./foco.component.css']
 })
 export class FocoComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(){}
+  
+  ngOnInit(){
+    
+  }
 
 }
