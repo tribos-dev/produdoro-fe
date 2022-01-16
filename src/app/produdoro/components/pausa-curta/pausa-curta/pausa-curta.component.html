@@ -5,9 +5,13 @@
         <button routerLink="/pausa-curta" type="button" class="btn btn-curta">Pausa Curta</button>
         <button routerLink="/pausa-longa" type="button" class="btn">Pausa Longa</button>
       </div>
-      <div id="tempo" class="d-flex justify-content-center">05:00</div>
+      <div id="tempo" class="d-flex justify-content-center">
+        <countdown #countdown [config]="{ leftTime: 300, format: 'mm:ss', demand:true }"></countdown>
+      </div>
       <div class="d-flex justify-content-center">
-        <button type="button" class="button btn-iniciar-pausar"><img class="justify-content-center" src="../../../../assets/icones/Simbolo Play.svg" height="20"></button>
+        <button (click)="countdown.resume()" type="button" class="button btn-iniciar-pausar">
+          <img class="justify-content-center" src="../../../../assets/icones/Simbolo Play.svg" height="20">
+        </button>
       </div>
     </div>
 </div>

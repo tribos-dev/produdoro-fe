@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ProdudoroModule } from './produdoro/produdoro.module';
-
+import { CountdownModule } from 'ngx-countdown';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,8 @@ import { ProdudoroModule } from './produdoro/produdoro.module';
     AppRoutingModule,
     NgbModule,
     NoopAnimationsModule,
-    ProdudoroModule
+    ProdudoroModule,
+    CountdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]
