@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { CountdownComponent, CountdownConfig } from 'ngx-countdown';
 
 @Component({
   selector: 'app-pausa-longa',
@@ -7,7 +8,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PausaLongaComponent implements OnInit {
 
+  @ViewChild('cd', { static: false })
+  private countdown!: CountdownComponent;
+
   constructor() { }
+
+  config: CountdownConfig = {
+    leftTime: 900,
+    format: 'mm:ss',
+    demand: true,
+  };
+  
+  pausa: boolean = true;
+  
+  
+  iniciaContador(){
+    this.config;
+    this.countdown.begin();
+    this.pausa = !this.pausa;
+  }
+
+  pausaContador(){
+    this.config;
+    this.countdown.pause()
+    this.pausa = !this.pausa;
+  }
 
   ngOnInit(): void {
   }

@@ -6,13 +6,13 @@
         <button routerLink="/pausa-longa" type="button" class="btn">Pausa Longa</button>
       </div>
       <div id="tempo" class="d-flex justify-content-center">
-        <countdown #countdown [config]="{ leftTime: 300, format: 'mm:ss', demand:true }"></countdown>
+        <countdown #cd [config]="config"></countdown>
       </div>
       <div class="d-flex justify-content-center">
-        <button (click)="countdown.resume()" type="button" class="button btn-iniciar-pausar">
+        <button (click)="iniciaCronometro()" type="button" class="button btn-iniciar-pausar" [ngClass]="{'alterna-icones': !pausa}">
           <img class="justify-content-center" src="../../../../assets/icones/Simbolo Play.svg" height="20">
         </button>
-        <button (click)="countdown.pause()" type="button" class="button btn-iniciar-pausar">
+        <button (click)="pausaCronometro()" type="button" class="button btn-iniciar-pausar" [ngClass]="{'alterna-icones': pausa}">
           <img class="justify-content-center" src="../../../../assets/icones/Ícone Pause.svg" height="15">
         </button>
       </div>

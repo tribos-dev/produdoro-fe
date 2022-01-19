@@ -45,6 +45,10 @@
     font-size: 18px;
   }
 
+  .alterna-icones{
+    display: none;
+  }
+  
   #tempo {
     margin: auto;
     font-family: 'Cabin-Regular';
