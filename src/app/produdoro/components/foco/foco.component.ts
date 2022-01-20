@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
 import { CountdownComponent, CountdownConfig} from 'ngx-countdown';
 import { __classPrivateFieldSet } from 'tslib';
+import { ProdudoroService } from '../../service/produdoro.service';
 
 
 
@@ -15,7 +16,7 @@ export class FocoComponent implements OnInit {
   @ViewChild('cd', { static: false })
   private countdown!: CountdownComponent;
  
-  constructor(){}
+  constructor(private produdoService: ProdudoroService){}
 
   config: CountdownConfig = {
     leftTime: 1500,
@@ -37,6 +38,7 @@ export class FocoComponent implements OnInit {
     this.countdown.pause()
     this.pause = !this.pause;
   }
+
   ngOnInit(){
   
   }
