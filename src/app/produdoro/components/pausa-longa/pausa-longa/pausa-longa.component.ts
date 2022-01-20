@@ -11,7 +11,8 @@ export class PausaLongaComponent implements OnInit {
   @ViewChild('cd', { static: false })
   private countdown!: CountdownComponent;
 
-  constructor() { }
+  constructor() {}
+  ngOnInit(): void {}
 
   config: CountdownConfig = {
     leftTime: 900,
@@ -20,7 +21,6 @@ export class PausaLongaComponent implements OnInit {
   };
   
   pausa: boolean = true;
-  
   
   iniciaCronometro(){
     this.config;
@@ -33,8 +33,4 @@ export class PausaLongaComponent implements OnInit {
     this.countdown.pause()
     this.pausa = !this.pausa;
   }
-
-  ngOnInit(): void {
-  }
-
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+
 import { CountdownComponent, CountdownConfig } from 'ngx-countdown';
 
 @Component({
@@ -11,7 +12,8 @@ export class PausaCurtaComponent implements OnInit {
   @ViewChild('cd', { static: false })
   private countdown!: CountdownComponent;
   
-  constructor() { }
+  constructor() {}
+  ngOnInit(): void {}
 
   config: CountdownConfig = {
     leftTime: 300,
@@ -20,7 +22,6 @@ export class PausaCurtaComponent implements OnInit {
   };
   
   pausa: boolean = true;
-  
   
   iniciaCronometro(){
     this.config;
@@ -32,9 +33,6 @@ export class PausaCurtaComponent implements OnInit {
     this.config;
     this.countdown.pause()
     this.pausa = !this.pausa;
-  }
-
-  ngOnInit(): void {
   }
 
 }
