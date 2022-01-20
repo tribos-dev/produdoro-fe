@@ -24,14 +24,14 @@ button:focus {
   border-radius: 10px;
   border-style: none;
   font-family: 'Cabin-Regular';
-  font-size: 15px;
+  font-size: 25px;
   box-sizing: border-box;
 
 }
 
 .btn-iniciar-pausar{
   background: white;
-  width: 100px;
+  width: 120px;
   height: 50px;
   border-radius: 10px;
   margin: auto;
@@ -46,7 +46,7 @@ button:focus {
   background: rgba(0, 0, 0, 0.15);
   opacity: 1;
   font-family: 'Cabin-Bold';
-  font-size: 18px;
+  font-size: 22px;
 }
 
 #tempo {

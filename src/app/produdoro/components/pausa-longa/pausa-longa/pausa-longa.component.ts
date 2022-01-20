@@ -22,13 +22,13 @@ export class PausaLongaComponent implements OnInit {
   pausa: boolean = true;
   
   
-  iniciaContador(){
+  iniciaCronometro(){
     this.config;
     this.countdown.begin();
     this.pausa = !this.pausa;
   }
 
-  pausaContador(){
+  pausaCronometro(){
     this.config;
     this.countdown.pause()
     this.pausa = !this.pausa;
