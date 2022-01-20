@@ -1,5 +1,7 @@
+body{
+  background-color:#51A855;
+}
 .fundo-tela{
-    background-color:#51A855;
     margin: 0;
     box-sizing: border-box;
   }
