@@ -1,9 +1,10 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
+import { Router } from '@angular/router';
 
 import { CountdownComponent, CountdownConfig, CountdownEvent} from 'ngx-countdown';
 import { __classPrivateFieldSet } from 'tslib';
-import { Produdoro } from '../../interface/produdoro';
 import { ProdudoroService } from '../../service/produdoro.service';
+
 
 
 
@@ -19,7 +20,7 @@ export class FocoComponent implements OnInit {
   @ViewChild('cd', { static: false })
   private countdown!: CountdownComponent;
  
-  constructor(private produdoroService: ProdudoroService){}
+  constructor(private produdoroService: ProdudoroService, private router:Router){}
 
   ngOnInit(): void {}
 
@@ -32,6 +33,7 @@ export class FocoComponent implements OnInit {
     demand: true,
   };
   notify = '';
+  contadorFoco = 0;
 
   iniciaCronometro(){
     this.config;
@@ -46,13 +48,22 @@ export class FocoComponent implements OnInit {
   }
 
   avanca(){
-    this.produdoroService.showMessage("Your time is over !");
+    this.contadorFoco++
+    if(this.contadorFoco % 4 === 0){
+      this.produdoroService.showMessage("Pausa Longa");
+    } else {
+      this.produdoroService.showMessage("Pausa Curta");
+      this.router.navigate(['/pausa-curta]']);
+    }
+    
   }
 
   handleEvent(e: CountdownEvent) {
      console.log('Notify', e);
     if ( e.action === "done") {
+      this.contadorFoco++;
       this.produdoroService.showMessage("Your time is over !");
+      this.router.navigate(['/pausa-curta]']);
     }
   }
 }
