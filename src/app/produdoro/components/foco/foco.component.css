@@ -1,5 +1,7 @@
+body{
+  background-color: #001228;
+}
 .fundo-tela{
-  background-color:#001228 ;
   margin: 0;
   box-sizing: border-box;
 }
@@ -36,6 +38,12 @@ button:focus {
   border-radius: 10px;
   margin: auto;
   border-style: none;
+}
+
+.btn-avancar{
+  background: #0D2A42;
+  border-style: none;
+  display: flex;
 }
 
 .alterna-icones{

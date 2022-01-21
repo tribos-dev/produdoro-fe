@@ -1,9 +1,10 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
 
-import { CountdownComponent, CountdownConfig} from 'ngx-countdown';
+import { CountdownComponent, CountdownConfig, CountdownEvent} from 'ngx-countdown';
 import { __classPrivateFieldSet } from 'tslib';
 import { Produdoro } from '../../interface/produdoro';
 import { ProdudoroService } from '../../service/produdoro.service';
+
 
 
 
@@ -18,7 +19,7 @@ export class FocoComponent implements OnInit {
   @ViewChild('cd', { static: false })
   private countdown!: CountdownComponent;
  
- /* constructor(private produdoService: ProdudoroService){}*/
+  constructor(private produdoroService: ProdudoroService){}
 
   ngOnInit(): void {}
 
@@ -26,10 +27,11 @@ export class FocoComponent implements OnInit {
   pause: boolean = true;
 
   config: CountdownConfig = {
-    leftTime: 1500,
+    leftTime: 3,
     format: 'mm:ss',
     demand: true,
   };
+  notify = '';
 
   iniciaCronometro(){
     this.config;
@@ -42,4 +44,16 @@ export class FocoComponent implements OnInit {
     this.countdown.pause()
     this.pause = !this.pause;
   }
+
+  avanca(){
+    this.produdoroService.showMessage("Your time is over !");
+  }
+
+  handleEvent(e: CountdownEvent) {
+     console.log('Notify', e);
+    if ( e.action === "done") {
+      this.produdoroService.showMessage("Your time is over !");
+    }
+  }
 }
+
