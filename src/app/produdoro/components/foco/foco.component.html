@@ -7,7 +7,11 @@
         <button routerlink="/pausa-longa" type="button" class="btn">Pausa Longa</button>
       </div>
       <div id="tempo" class="d-flex justify-content-center">
+<<<<<<< HEAD
         <countdown #cd [config]="config" (event)="handleEvent($event)"></countdown>
+=======
+        <countdown #cd [config]="config"></countdown>
+>>>>>>> 8bd99c6ee174ce053f8bb3f24cab60a46be78808
       </div>
       <div class="d-flex justify-content-center pt-4">
         <button (click)="iniciaCronometro()" type="button" class="button btn-iniciar-pausar" [ngClass]="{'alterna-icones': !pause}">
@@ -17,11 +21,14 @@
           <img class="justify-content-center" src="../../../../assets/icones/Ícone Pause.svg" height="15">
         </button>
       </div>
+<<<<<<< HEAD
       <div>
         <button (click)="avanca()" type="button" class="btn-avancar">
           <img class="justify-content-center" src="../../../../assets/icones/Botão Avançar.svg" height="20">
         </button>
       </div>
+=======
+>>>>>>> 8bd99c6ee174ce053f8bb3f24cab60a46be78808
     </div>
   </div>
 </body>
