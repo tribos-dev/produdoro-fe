@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { CountdownComponent, CountdownConfig } from 'ngx-countdown';
+import { ProdudoroService } from 'src/app/produdoro/service/produdoro.service';
 
 @Component({
   selector: 'app-pausa-longa',
@@ -11,7 +13,7 @@ export class PausaLongaComponent implements OnInit {
   @ViewChild('cd', { static: false })
   private countdown!: CountdownComponent;
 
-  constructor() {}
+  constructor(private produdoroService: ProdudoroService, private router: Router) {}
   ngOnInit(): void {}
 
   config: CountdownConfig = {
@@ -19,9 +21,11 @@ export class PausaLongaComponent implements OnInit {
     format: 'mm:ss',
     demand: true,
   };
-  
+  notify = '';
+  contadorFoco = 0;
+
   pausa: boolean = true;
-  
+
   iniciaCronometro(){
     this.config;
     this.countdown.begin();
@@ -32,5 +36,15 @@ export class PausaLongaComponent implements OnInit {
     this.config;
     this.countdown.pause()
     this.pausa = !this.pausa;
+  }
+
+  avanca(){
+    this.contadorFoco++
+    if(this.contadorFoco % 4 === 0){
+      this.produdoroService.showMessage("Pausa Longa");
+    } else {
+      this.produdoroService.showMessage("Pausa Curta");
+      this.router.navigate(['/pausa-curta]']);
+    }
   }
 }

@@ -41,9 +41,15 @@ button:focus {
 }
 
 .btn-avancar{
+
   background: #0D2A42;
   border-style: none;
-  display: flex;
+  position: relative;
+  top: -35px;
+  left: 299px;
+
+  /* margin-left: 150px; */
+
 }
 
 .alterna-icones{
