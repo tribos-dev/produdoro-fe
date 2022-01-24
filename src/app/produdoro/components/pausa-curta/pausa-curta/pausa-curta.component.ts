@@ -25,7 +25,7 @@ export class PausaCurtaComponent implements OnInit {
   ngOnInit(): void {}
 
   config: CountdownConfig = {
-    leftTime: 300,
+    leftTime: 3,
     format: 'mm:ss',
     demand: true,
   };
@@ -35,12 +35,14 @@ export class PausaCurtaComponent implements OnInit {
   pausa: boolean = true;
 
   iniciaCronometro(){
+    this.tocarInicioProdudoro();
     this.config;
     this.countdown.begin();
     this.pausa = !this.pausa;
   }
 
   pausaCronometro(){
+    this.tocarInicioProdudoro();
     this.config;
     this.countdown.pause()
     this.pausa = !this.pausa;
@@ -61,12 +63,26 @@ export class PausaCurtaComponent implements OnInit {
     }
   }
   
+  tocarInicioProdudoro(){
+    let som = new Audio();
+    som.src = "../../../../../assets/sons/inicioFoco.mp3";
+    som.load();
+    som.play();
+  }
+
+  tocarSomProdudoro(){
+    let som = new Audio();
+    som.src = "../../../../../assets/sons/fimFoco.mp3";
+    som.load();
+    som.play();
+  }
 
   handleEvent(e: CountdownEvent) {
     console.log('Notify', e);
    if ( e.action === "done") {
      const numPomodoros = this.sessao.get(SessionSetting.NumeroDePomodoros, 0);
      console.log(numPomodoros)
+     this.tocarSomProdudoro();
      if(numPomodoros < 4 ){
        this.produdoroService.showMessage("Sua pausa curta acabou !");
        this.router.navigate(["/foco"]);
