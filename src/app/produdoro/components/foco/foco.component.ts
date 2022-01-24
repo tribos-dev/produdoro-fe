@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { CountdownComponent, CountdownConfig, CountdownEvent} from 'ngx-countdown';
 import { __classPrivateFieldSet } from 'tslib';
 import { ProdudoroService } from '../../service/produdoro.service';
+import { SessaoService } from '../../service/sessao.service';
+import { SessionSetting } from '../../service/setting.enum';
 
 
 
@@ -20,15 +22,18 @@ export class FocoComponent implements OnInit {
   @ViewChild('cd', { static: false })
   private countdown!: CountdownComponent;
  
-  constructor(private produdoroService: ProdudoroService, private router:Router){}
+  constructor(
+    private produdoroService: ProdudoroService,
+    private router: Router,
+    private sessao: SessaoService){}
 
   ngOnInit(): void {}
 
   /*produdoro: Produdoro[] = [];*/
-  pause: boolean = true;
+  pausa: boolean = true;
 
   config: CountdownConfig = {
-    leftTime: 3,
+    leftTime: 5,
     format: 'mm:ss',
     demand: true,
   };
@@ -38,33 +43,41 @@ export class FocoComponent implements OnInit {
   iniciaCronometro(){
     this.config;
     this.countdown.begin();
-    this.pause = !this.pause;
+    this.pausa = !this.pausa;
   }
 
   pausaCronometro(){
     this.config;
     this.countdown.pause()
-    this.pause = !this.pause;
+    this.pausa = !this.pausa;
   }
 
-  avanca(){
-    this.contadorFoco++
-    if(this.contadorFoco % 4 === 0){
-      this.produdoroService.showMessage("Pausa Longa");
+  avancaStatus(){
+    this.produdoroService.incrementaContadorPomodoro();
+    const numPomodoros = this.sessao.get(SessionSetting.NumeroDePomodoros, 0);
+    console.log(numPomodoros)
+    if(numPomodoros % 4 === 0){
+      this.router.navigate(["/pausa-longa"]);
     } else {
-      this.produdoroService.showMessage("Pausa Curta");
-      this.router.navigate(['/pausa-curta]']);
-    }
-    
+        this.router.navigate(["/pausa-curta"]);
+      }
   }
 
   handleEvent(e: CountdownEvent) {
      console.log('Notify', e);
     if ( e.action === "done") {
-      this.contadorFoco++;
-      this.produdoroService.showMessage("Your time is over !");
-      this.router.navigate(['/pausa-curta]']);
+      this.produdoroService.incrementaContadorPomodoro();
+      const numPomodoros = this.sessao.get(SessionSetting.NumeroDePomodoros, 0);
+      console.log(numPomodoros)
+      if(numPomodoros % 4 === 0){
+        this.produdoroService.showMessage("Your time is over !");
+        this.router.navigate(["/pausa-longa"]);
+      } else {
+        this.produdoroService.showMessage("Your time is over !");
+        this.router.navigate(["/pausa-curta"]);
+      }
     }
   }
 }
+
 

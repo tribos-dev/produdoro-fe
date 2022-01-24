@@ -10,15 +10,15 @@
         <countdown #cd [config]="config" (event)="handleEvent($event)"></countdown>
       </div>
       <div class="d-flex justify-content-center pt-4">
-        <button (click)="iniciaCronometro()" type="button" class="button btn-iniciar-pausar" [ngClass]="{'alterna-icones': !pause}">
+        <button (click)="iniciaCronometro()" type="button" class="button btn-iniciar-pausar" [ngClass]="{'alterna-icones': !pausa}">
           <img class="justify-content-center" src="../../../../assets/icones/Simbolo Play.svg" height="20">
         </button>
-        <button (click)="pausaCronometro()" type="button" class="button btn-iniciar-pausar" [ngClass]="{'alterna-icones': pause}">
+        <button (click)="pausaCronometro()" type="button" class="button btn-iniciar-pausar" [ngClass]="{'alterna-icones': pausa}">
           <img class="justify-content-center" src="../../../../assets/icones/Ícone Pause.svg" height="15">
         </button>
       </div>
       <div>
-        <button (click)="avanca()" type="button" class="btn-avancar">
+        <button (click)="avancaStatus()" type="button" class="btn-avancar" [ngClass]="{'alterna-icones': pausa}">
           <img src="../../../../assets/icones/Botão Avançar.svg" height="20">
         </button>
       </div>

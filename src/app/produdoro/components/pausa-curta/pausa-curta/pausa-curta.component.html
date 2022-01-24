@@ -7,7 +7,7 @@
           <button routerLink="/pausa-longa" type="button" class="btn">Pausa Longa</button>
         </div>
         <div id="tempo" class="d-flex justify-content-center">
-          <countdown #cd [config]="config"></countdown>
+          <countdown #cd [config]="config" (event)="handleEvent($event)"></countdown>
         </div>
         <div class="d-flex justify-content-center pt-4">
           <button (click)="iniciaCronometro()" type="button" class="button btn-iniciar-pausar" [ngClass]="{'alterna-icones': !pausa}">
@@ -18,7 +18,7 @@
           </button>
         </div>
         <div>
-          <button (click)="avanca()" type="button" class="btn-avancar">
+          <button (click)="avancaStatus()" type="button" class="btn-avancar" [ngClass]="{'alterna-icones': pausa}">
             <img src="../../../../assets/icones/Botão Avançar.svg" height="20">
           </button>
         </div>
