@@ -30,19 +30,17 @@ export class PausaCurtaComponent implements OnInit {
     demand: true,
   };
   notify = '';
-  contadorFoco = 0;
-
   pausa: boolean = true;
 
   iniciaCronometro(){
-    this.tocarInicioProdudoro();
+    this.tocaInicioProdudoro();
     this.config;
     this.countdown.begin();
     this.pausa = !this.pausa;
   }
 
   pausaCronometro(){
-    this.tocarInicioProdudoro();
+    this.tocaInicioProdudoro();
     this.config;
     this.countdown.pause()
     this.pausa = !this.pausa;
@@ -63,14 +61,14 @@ export class PausaCurtaComponent implements OnInit {
     }
   }
   
-  tocarInicioProdudoro(){
+  tocaInicioProdudoro(){
     let som = new Audio();
     som.src = "../../../../../assets/sons/inicioFoco.mp3";
     som.load();
     som.play();
   }
 
-  tocarSomProdudoro(){
+  tocaSomProdudoro(){
     let som = new Audio();
     som.src = "../../../../../assets/sons/fimFoco.mp3";
     som.load();
@@ -82,7 +80,7 @@ export class PausaCurtaComponent implements OnInit {
    if ( e.action === "done") {
      const numPomodoros = this.sessao.get(SessionSetting.NumeroDePomodoros, 0);
      console.log(numPomodoros)
-     this.tocarSomProdudoro();
+     this.tocaSomProdudoro();
      if(numPomodoros < 4 ){
        this.produdoroService.showMessage("Sua pausa curta acabou !");
        this.router.navigate(["/foco"]);

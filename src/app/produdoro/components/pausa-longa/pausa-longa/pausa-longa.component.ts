@@ -29,19 +29,17 @@ export class PausaLongaComponent implements OnInit {
     demand: true,
   };
   notify = '';
-  contadorFoco = 0;
-
   pausa: boolean = true;
 
   iniciaCronometro(){
-    this.tocarInicioProdudoro();
+    this.tocaInicioProdudoro();
     this.config;
     this.countdown.begin();
     this.pausa = !this.pausa;
   }
 
   pausaCronometro(){
-    this.tocarInicioProdudoro();
+    this.tocaInicioProdudoro();
     this.config;
     this.countdown.pause()
     this.pausa = !this.pausa;
@@ -57,14 +55,14 @@ export class PausaLongaComponent implements OnInit {
     }
   }
 
-  tocarInicioProdudoro(){
+  tocaInicioProdudoro(){
     let som = new Audio();
     som.src = "../../../../../assets/sons/inicioFoco.mp3";
     som.load();
     som.play();
   }
 
-  tocarSomProdudoro(){
+  tocaSomProdudoro(){
     let som = new Audio();
     som.src = "../../../../../assets/sons/fimFoco.mp3";
     som.load();
@@ -74,7 +72,7 @@ export class PausaLongaComponent implements OnInit {
   handleEvent(e: CountdownEvent) {
     console.log('Notify', e);
    if ( e.action === "done") {
-    this.tocarSomProdudoro();
+    this.tocaSomProdudoro();
     this.produdoroService.limpaContadorPomodoro();
     this.produdoroService.showMessage("Sua pausa longa acabou !");
     this.router.navigate(["/foco"]);  

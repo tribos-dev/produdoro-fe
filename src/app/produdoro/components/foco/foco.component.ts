@@ -29,7 +29,6 @@ export class FocoComponent implements OnInit {
   ngOnInit(): void {}
 
   /*produdoro: Produdoro[] = [];*/
-  pausa: boolean = true;
 
   config: CountdownConfig = {
     leftTime: 1500,
@@ -37,17 +36,17 @@ export class FocoComponent implements OnInit {
     demand: true,
   };
   notify = '';
-  contadorFoco = 0;
+  pausa: boolean = true;
 
   iniciaCronometro(){
-    this.tocarInicioProdudoro();
+    this.tocaInicioProdudoro();
     this.config;
     this.countdown.begin();
     this.pausa = !this.pausa;
   }
 
   pausaCronometro(){
-    this.tocarInicioProdudoro();
+    this.tocaInicioProdudoro();
     this.config;
     this.countdown.pause()
     this.pausa = !this.pausa;
@@ -69,14 +68,14 @@ export class FocoComponent implements OnInit {
     }
   }
 
-  tocarInicioProdudoro(){
+  tocaInicioProdudoro(){
     let som = new Audio();
     som.src = "../../../../../assets/sons/inicioFoco.mp3";
     som.load();
     som.play();
   }
 
-  tocarSomProdudoro(){
+  tocaSomProdudoro(){
     let som = new Audio();
     som.src = "../../../../../assets/sons/fimFoco.mp3";
     som.load();
@@ -86,7 +85,7 @@ export class FocoComponent implements OnInit {
   handleEvent(e: CountdownEvent) {
      console.log('Notify', e);
     if ( e.action === "done") {
-      this.tocarSomProdudoro();
+      this.tocaSomProdudoro();
       this.produdoroService.incrementaContadorPomodoro();
       const numPomodoros = this.sessao.get(SessionSetting.NumeroDePomodoros, 0);
       console.log(numPomodoros)
