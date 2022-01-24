@@ -25,7 +25,7 @@ export class PausaCurtaComponent implements OnInit {
   ngOnInit(): void {}
 
   config: CountdownConfig = {
-    leftTime: 5,
+    leftTime: 300,
     format: 'mm:ss',
     demand: true,
   };

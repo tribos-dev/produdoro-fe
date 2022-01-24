@@ -33,7 +33,7 @@ export class FocoComponent implements OnInit {
   pausa: boolean = true;
 
   config: CountdownConfig = {
-    leftTime: 5,
+    leftTime: 1500,
     format: 'mm:ss',
     demand: true,
   };
