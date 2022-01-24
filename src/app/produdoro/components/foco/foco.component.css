@@ -38,6 +38,7 @@ button:focus {
   border-radius: 10px;
   margin: auto;
   border-style: none;
+  box-shadow: rgb(235 235 235) 0px 6px 0px;
 }
 
 .btn-avancar{

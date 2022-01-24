@@ -19,11 +19,12 @@ export class FocoComponent implements OnInit {
 
   @ViewChild('cd', { static: false })
   private countdown!: CountdownComponent;
- 
+
   constructor(
     private produdoroService: ProdudoroService,
-    private router: Router,
-    private sessao: SessaoService){}
+    private router:Router,
+    private sessao : SessaoService){}
+
 
   ngOnInit(): void {}
 
