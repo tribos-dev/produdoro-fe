@@ -19,8 +19,12 @@ export class FocoComponent implements OnInit {
 
   @ViewChild('cd', { static: false })
   private countdown!: CountdownComponent;
- 
+
+
+  public botaoInvisivel = false;
+
   constructor(private produdoroService: ProdudoroService, private router:Router){}
+
 
   ngOnInit(): void {}
 
@@ -55,7 +59,7 @@ export class FocoComponent implements OnInit {
       this.produdoroService.showMessage("Pausa Curta");
       this.router.navigate(['/pausa-curta]']);
     }
-    
+
   }
 
   handleEvent(e: CountdownEvent) {
