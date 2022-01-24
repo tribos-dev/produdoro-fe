@@ -46,15 +46,20 @@ export class PausaLongaComponent implements OnInit {
   }
 
   avancaStatus(){
-    this.produdoroService.limpaContadorPomodoro();
-    this.router.navigate(["/foco"]);
+    const resultado = confirm("Tem certeza de que deseja terminar a rodada mais cedo? (O tempo restante não será contado no relatório.)");
+    if (resultado){
+      this.produdoroService.limpaContadorPomodoro();
+      this.router.navigate(["/foco"]);
+    } else {
+      this.countdown.resume();
+    }
   }
 
   handleEvent(e: CountdownEvent) {
     console.log('Notify', e);
    if ( e.action === "done") {
     this.produdoroService.limpaContadorPomodoro();
-    this.produdoroService.showMessage("Your time is over !");
+    this.produdoroService.showMessage("Sua pausa longa acabou !");
     this.router.navigate(["/foco"]);  
     }
   }

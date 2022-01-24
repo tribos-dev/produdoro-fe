@@ -9,8 +9,6 @@ import { SessionSetting } from '../../service/setting.enum';
 
 
 
-
-
 @Component({
   selector: 'app-foco',
   templateUrl: './foco.component.html',
@@ -53,14 +51,19 @@ export class FocoComponent implements OnInit {
   }
 
   avancaStatus(){
-    this.produdoroService.incrementaContadorPomodoro();
-    const numPomodoros = this.sessao.get(SessionSetting.NumeroDePomodoros, 0);
-    console.log(numPomodoros)
-    if(numPomodoros % 4 === 0){
-      this.router.navigate(["/pausa-longa"]);
+    const resultado = confirm("Tem certeza de que deseja terminar a rodada mais cedo? (O tempo restante não será contado no relatório.)");
+    if (resultado){
+      this.produdoroService.incrementaContadorPomodoro();
+      const numPomodoros = this.sessao.get(SessionSetting.NumeroDePomodoros, 0);
+      console.log(numPomodoros)
+      if(numPomodoros % 4 === 0){
+        this.router.navigate(["/pausa-longa"]);
+      } else {
+          this.router.navigate(["/pausa-curta"]);
+        }
     } else {
-        this.router.navigate(["/pausa-curta"]);
-      }
+      this.countdown.resume();
+    }
   }
 
   handleEvent(e: CountdownEvent) {
@@ -70,10 +73,10 @@ export class FocoComponent implements OnInit {
       const numPomodoros = this.sessao.get(SessionSetting.NumeroDePomodoros, 0);
       console.log(numPomodoros)
       if(numPomodoros % 4 === 0){
-        this.produdoroService.showMessage("Your time is over !");
+        this.produdoroService.showMessage("Hora do descanso !");
         this.router.navigate(["/pausa-longa"]);
       } else {
-        this.produdoroService.showMessage("Your time is over !");
+        this.produdoroService.showMessage("Hora do descanso !");
         this.router.navigate(["/pausa-curta"]);
       }
     }

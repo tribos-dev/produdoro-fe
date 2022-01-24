@@ -47,12 +47,17 @@ export class PausaCurtaComponent implements OnInit {
   }
 
   avancaStatus(){
-    const numPomodoros = this.sessao.get(SessionSetting.NumeroDePomodoros, 0);
-    console.log(numPomodoros)
-    if(numPomodoros % 4 === 0){
-      this.router.navigate(["/pausa-longa"]);
+    const resultado = confirm("Tem certeza de que deseja terminar a rodada mais cedo? (O tempo restante não será contado no relatório.)");
+    if (resultado){
+      const numPomodoros = this.sessao.get(SessionSetting.NumeroDePomodoros, 0);
+      console.log(numPomodoros)
+      if(numPomodoros % 4 === 0){
+        this.router.navigate(["/pausa-longa"]);
+      } else{
+        this.router.navigate(["/foco"]);
+      }
     } else{
-      this.router.navigate(["/foco"]);
+      this.countdown.resume();
     }
   }
   
@@ -63,7 +68,7 @@ export class PausaCurtaComponent implements OnInit {
      const numPomodoros = this.sessao.get(SessionSetting.NumeroDePomodoros, 0);
      console.log(numPomodoros)
      if(numPomodoros < 4 ){
-       this.produdoroService.showMessage("Your time is over !");
+       this.produdoroService.showMessage("Sua pausa curta acabou !");
        this.router.navigate(["/foco"]);
       }
     }
