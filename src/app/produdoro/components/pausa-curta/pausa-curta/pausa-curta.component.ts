@@ -1,8 +1,11 @@
-import { ProdudoroService } from './../../../service/produdoro.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { CountdownComponent, CountdownConfig } from 'ngx-countdown';
+
+import { ProdudoroService } from './../../../service/produdoro.service';
+import { CountdownComponent, CountdownConfig, CountdownEvent } from 'ngx-countdown';
 import { Router } from '@angular/router';
 import { __classPrivateFieldSet } from 'tslib';
+import { SessaoService } from '../../../service/sessao.service';
+import { SessionSetting } from '../../../service/setting.enum';
 
 @Component({
   selector: 'app-pausa-curta',
@@ -14,7 +17,11 @@ export class PausaCurtaComponent implements OnInit {
   @ViewChild('cd', { static: false })
   private countdown!: CountdownComponent;
 
-  constructor(private produdoroService: ProdudoroService, private router:Router) {}
+  constructor(
+    private produdoroService: ProdudoroService,
+    private router:Router,
+    private sessao: SessaoService) {}
+
   ngOnInit(): void {}
 
   config: CountdownConfig = {
@@ -39,14 +46,26 @@ export class PausaCurtaComponent implements OnInit {
     this.pausa = !this.pausa;
   }
 
-  avanca(){
-    this.contadorFoco++
-    if(this.contadorFoco % 4 === 0){
-      this.produdoroService.showMessage("Pausa Longa");
-    } else {
-      this.produdoroService.showMessage("Pausa Curta");
-      this.router.navigate(['/pausa-curta]']);
+  avancaStatus(){
+    const numPomodoros = this.sessao.get(SessionSetting.NumeroDePomodoros, 0);
+    console.log(numPomodoros)
+    if(numPomodoros % 4 === 0){
+      this.router.navigate(["/pausa-longa"]);
+    } else{
+      this.router.navigate(["/foco"]);
     }
+  }
+  
 
+  handleEvent(e: CountdownEvent) {
+    console.log('Notify', e);
+   if ( e.action === "done") {
+     const numPomodoros = this.sessao.get(SessionSetting.NumeroDePomodoros, 0);
+     console.log(numPomodoros)
+     if(numPomodoros < 4 ){
+       this.produdoroService.showMessage("Your time is over !");
+       this.router.navigate(["/foco"]);
+      }
+    }
   }
 }

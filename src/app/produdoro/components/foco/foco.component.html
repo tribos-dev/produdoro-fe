@@ -10,16 +10,27 @@
         <countdown #cd [config]="config" (event)="handleEvent($event)"></countdown>
       </div>
       <div class="d-flex justify-content-center pt-4">
+<<<<<<< HEAD
         <button (click)="iniciaCronometro(); botaoInvisivel = true" type="button" class="button btn-iniciar-pausar" [ngClass]="{'alterna-icones': !pause}">
           <img class="justify-content-center" src="../../../../assets/icones/Simbolo Play.svg" height="20">
         </button>
         <button (click)="pausaCronometro(); botaoInvisivel = false" type="button" class="button btn-iniciar-pausar" [ngClass]="{'alterna-icones': pause}"
         >
+=======
+        <button (click)="iniciaCronometro()" type="button" class="button btn-iniciar-pausar" [ngClass]="{'alterna-icones': !pausa}">
+          <img class="justify-content-center" src="../../../../assets/icones/Simbolo Play.svg" height="20">
+        </button>
+        <button (click)="pausaCronometro()" type="button" class="button btn-iniciar-pausar" [ngClass]="{'alterna-icones': pausa}">
+>>>>>>> c25e711b7d07afd6fdef630f487a72e9a28e6159
           <img class="justify-content-center" src="../../../../assets/icones/Ícone Pause.svg" height="15">
         </button>
       </div>
       <div>
+<<<<<<< HEAD
         <button (click)="avanca()" type="button" class="btn-avancar botaoInvisivel" [hidden]="!botaoInvisivel">
+=======
+        <button (click)="avancaStatus()" type="button" class="btn-avancar" [ngClass]="{'alterna-icones': pausa}">
+>>>>>>> c25e711b7d07afd6fdef630f487a72e9a28e6159
           <img src="../../../../assets/icones/Botão Avançar.svg" height="20">
         </button>
       </div>

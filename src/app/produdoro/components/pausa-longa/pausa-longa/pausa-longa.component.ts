@@ -1,7 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { CountdownComponent, CountdownConfig } from 'ngx-countdown';
+
+import { CountdownComponent, CountdownConfig, CountdownEvent } from 'ngx-countdown';
 import { ProdudoroService } from 'src/app/produdoro/service/produdoro.service';
+import { SessaoService } from '../../../service/sessao.service';
+import { SessionSetting } from '../../../service/setting.enum';
+
 
 @Component({
   selector: 'app-pausa-longa',
@@ -13,7 +17,10 @@ export class PausaLongaComponent implements OnInit {
   @ViewChild('cd', { static: false })
   private countdown!: CountdownComponent;
 
-  constructor(private produdoroService: ProdudoroService, private router: Router) {}
+  constructor(
+    private produdoroService: ProdudoroService,
+    private router: Router,
+    private sessao: SessaoService) {}
   ngOnInit(): void {}
 
   config: CountdownConfig = {
@@ -38,13 +45,17 @@ export class PausaLongaComponent implements OnInit {
     this.pausa = !this.pausa;
   }
 
-  avanca(){
-    this.contadorFoco++
-    if(this.contadorFoco % 4 === 0){
-      this.produdoroService.showMessage("Pausa Longa");
-    } else {
-      this.produdoroService.showMessage("Pausa Curta");
-      this.router.navigate(['/pausa-curta]']);
+  avancaStatus(){
+    this.produdoroService.limpaContadorPomodoro();
+    this.router.navigate(["/foco"]);
+  }
+
+  handleEvent(e: CountdownEvent) {
+    console.log('Notify', e);
+   if ( e.action === "done") {
+    this.produdoroService.limpaContadorPomodoro();
+    this.produdoroService.showMessage("Your time is over !");
+    this.router.navigate(["/foco"]);  
     }
   }
 }
