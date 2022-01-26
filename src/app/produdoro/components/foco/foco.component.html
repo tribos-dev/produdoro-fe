@@ -1,0 +1,28 @@
+<body>
+  <div class="fundo-tela d-flex justify-content-center">
+    <div class="painel-produdoro">
+      <div class="botoes-status justify-content-center mt-2 px-4">
+        <button routerLink="/foco" type="button" id="botao-foco" class="btn">Foco</button>
+        <button routerLink="/pausa-curta" type="button" class="btn btn-curta">Pausa Curta</button>
+        <button routerlink="/pausa-longa" type="button" class="btn">Pausa Longa</button>
+      </div>
+      <div id="tempo" class="d-flex justify-content-center">
+        <countdown #cd [config]="config" (event)="handleEvent($event)"></countdown>
+      </div>
+      <div class="d-flex justify-content-center pt-4">
+        <button (click)="iniciaCronometro()" type="button" class="button btn-iniciar-pausar" [ngClass]="{'alterna-icones': !pausa}">
+          <img class="justify-content-center" src="../../../../assets/icones/Simbolo Play.svg" height="20">
+        </button>
+        <button (click)="pausaCronometro()" type="button" class="button btn-iniciar-pausar" [ngClass]="{'alterna-icones': pausa}">
+          <img class="justify-content-center" src="../../../../assets/icones/Ícone Pause.svg" height="15">
+        </button>
+      </div>
+      <div>
+        <button (click)="avancaStatus()" type="button" class="btn-avancar botaoInvisivel" [hidden]="pausa">
+          <img src="../../../../assets/icones/Botão Avançar.svg" height="20">
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+
