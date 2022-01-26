@@ -1,4 +1,6 @@
 export interface NewUser {
+    id:number,
     usuario: string,
-    senha: string,
+    email:string,
+    senha: string
 }

@@ -9,7 +9,16 @@ import { HomeComponent } from './home/home.component';
 import { CadastroComponent } from './home/cadastro/cadastro.component';
 import { ConfigurarComponent } from './home/configurar/configurar.component';
 import { CompartilhadoModule } from './compartilhado/compartilhado.module';
+import { ToastrModule } from 'ngx-toastr';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
+const toastrConfig = {
+  maxOpened: 1,
+  timeOut: 5000,
+  autoDimiss: true,
+  preventDuplicates: true,
+  positionClass: 'toast-top-rigth'
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +30,8 @@ import { CompartilhadoModule } from './compartilhado/compartilhado.module';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    NgxSpinnerModule,
+    ToastrModule.forRoot(),
     NoopAnimationsModule,
     CompartilhadoModule
   ],

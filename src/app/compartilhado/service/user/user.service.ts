@@ -1,54 +1,72 @@
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
-import * as jwt_decode from 'jwt-decode';
-import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import { User } from './user';
 
-import { TokenService } from '../token/token.service';
-import { User } from "../../../compartilhado/interface/user";
-import * as environament from '../../../../environments/environment.js'
+import {catchError, finalize} from 'rxjs/operators'
+import { throwError } from 'rxjs';
+import { NgxSpinnerService, Spinner } from 'ngx-spinner';
+import { ToastrService } from 'ngx-toastr';
 
-const null = null;
 @Injectable({
   providedIn: 'root'
 })
+
 export class UserService {
 
-  private userSubject = new BehaviorSubject<User>(null);
+  apiUrl = `${environment.apiUrl}/cadastro`;
+
+  users: User [] = []
+
   constructor(
-    private tokenService: TokenService,
-    private router: Router,
-    private http: HttpClient,
-  ) { this.tokenService.hasToken() && this.decode(); }
+    private toastr: ToastrService,
+    private spinner: NgxSpinnerService,
+    private http: HttpClient 
+  ){
+}
 
-  private decode() {
-    const token = this.tokenService.getToken();
-    const user = jwt_decode(token) as User;
-    this.userSubject.next(user);
+  save(user: User) {
+    this.spinner.show();
+    return this.http.post<User>(this.apiUrl, user).pipe(
+      catchError(err => this.exceptionHandler(err)),
+      finalize(() => this.spinner.hide())
+    );
   }
 
-  setToken(token: string) {
-    this.tokenService.setToken(token);
-    this.decode();
+    update(id: number, user: User){
+      this.spinner.show();  
+    return this.http.put<User>(`${this.apiUrl}/${id}`, user).pipe(
+      catchError(err => this.exceptionHandler(err)),
+      finalize(() => this.spinner.hide())
+    );
   }
 
-  logout() {
-    this.tokenService.removeToken();
-    this.router.navigateByUrl("login");
+  deleteById(id:number) {
+    this.spinner.show();
+    return this.http.delete<void>(`${this.apiUrl}/${id}`).pipe(
+      catchError(err => this.exceptionHandler(err)),
+      finalize(() => this.spinner.hide())
+    );
   }
 
-  isLogged() {
-    return this.tokenService.hasToken();
+  findById(id: number) {
+    this.spinner.show();
+    return this.http.get<User>(`${this.apiUrl}/${id}`).pipe(
+      catchError(err => this.exceptionHandler(err)),
+      finalize(() => this.spinner.hide())
+    );
   }
 
-  getUser() {
-    console.log(this.userSubject);
-    return this.userSubject.asObservable();
+  findAll() {
+    this.spinner.show();
+    return this.http.get<User[]>(this.apiUrl).pipe(
+      catchError(err => this.exceptionHandler(err)),
+      finalize(() => this.spinner.hide())
+    );
   }
 
-  hasUser(user: User): boolean {
-    if (user)
-      return true;
-    return false
+  private exceptionHandler(error: HttpErrorResponse) {
+    this.toastr.error(error.message, `${error.status} - ${error.statusText}`);
+    return throwError(error);
   }
 }
