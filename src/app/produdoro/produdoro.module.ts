@@ -7,6 +7,7 @@ import { PausaLongaComponent } from './components/pausa-longa/pausa-longa/pausa-
 import { FocoComponent } from './components/foco/foco.component';
 import { CountdownModule } from 'ngx-countdown';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { TarefaComponent } from './components/tarefa/tarefa.component';
 
 
 
@@ -14,7 +15,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
   declarations: [
     FocoComponent,
     PausaCurtaComponent,
-    PausaLongaComponent
+    PausaLongaComponent,
+    TarefaComponent
   ],
   imports: [
     CommonModule,
