@@ -7,11 +7,17 @@ import { PausaLongaComponent } from './components/pausa-longa/pausa-longa/pausa-
 import { FocoComponent } from './components/foco/foco.component';
 import { CountdownModule } from 'ngx-countdown';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HomeComponent } from '../home/home.component';
+import { CadastroComponent } from '../home/cadastro/cadastro.component';
+import { ConfigurarComponent } from '../home/configurar/configurar.component';
 
 
 
 @NgModule({
   declarations: [
+    HomeComponent,
+    CadastroComponent,
+    ConfigurarComponent,
     FocoComponent,
     PausaCurtaComponent,
     PausaLongaComponent

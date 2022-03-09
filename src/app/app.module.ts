@@ -5,14 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { HomeComponent } from './home/home.component';
-import { CadastroComponent } from './home/cadastro/cadastro.component';
-import { ConfigurarComponent } from './home/configurar/configurar.component';
 import { CompartilhadoModule } from './compartilhado/compartilhado.module';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ProdudoroModule } from './produdoro/produdoro.module';
-import { CountdownModule } from 'ngx-countdown';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -27,9 +23,6 @@ const toastrConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    CadastroComponent,
-    ConfigurarComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +35,6 @@ const toastrConfig = {
     HttpClientModule,
     NoopAnimationsModule,
     ProdudoroModule,
-    CountdownModule,
     MatSnackBarModule
   ],
   providers: [],
