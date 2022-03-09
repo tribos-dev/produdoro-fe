@@ -1,5 +1,7 @@
+body{
+  background-color:#51A855;
+}
 .fundo-tela{
-    background-color:#51A855;
     margin: 0;
     box-sizing: border-box;
   }
@@ -10,14 +12,14 @@
     border-radius: 10px;
     background-color: #62b166;
   }
-  
+
   button:focus {
     box-shadow: 0 0 0 0;
     border: 0 none;
     outline: 0;
     transform: scale(1.1);
   }
-  
+
   .btn{
     color: white;
     border: none;
@@ -26,9 +28,9 @@
     font-family: 'Cabin-Regular';
     font-size: 25px;
     box-sizing: border-box;
-  
+
   }
- 
+
   .btn-iniciar-pausar{
     background: white;
     width: 120px;
@@ -37,7 +39,7 @@
     margin: auto;
     border-style: none;
   }
-  
+
   #botao-pausaLonga{
     background: none rgba(0, 0, 0, 0.15);
     opacity: 1;
@@ -48,20 +50,29 @@
   .alterna-icones{
     display: none;
   }
-  
+
+
   #tempo {
     margin: auto;
     font-family: 'Cabin-Regular';
     font-size: 100px;
     color: white;
   }
-  
+  .btn-avancar{
+    background: #62b166;
+    border-style: none;
+    position: relative;
+    top: -35px;
+    left: 299px;
+
+  }
+
   @media screen  and (max-width: 480px) {
     .fundo-tela {
       width: auto;
       background-color: #51A855;
       flex-direction: row;
-  
+
     }
     .painel-produdoro {
       width: 90%;
@@ -72,7 +83,7 @@
   }
     .btn-curta {
       word-wrap: break-word;
-  
+
     }
     .btn {
       font-size: 1.65em;
@@ -104,4 +115,3 @@
       font-size: 15px;
     }
   }
-  

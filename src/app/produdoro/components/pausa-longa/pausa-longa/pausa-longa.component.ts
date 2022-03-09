@@ -1,5 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { CountdownComponent, CountdownConfig } from 'ngx-countdown';
+import { Router } from '@angular/router';
+
+import { CountdownComponent, CountdownConfig, CountdownEvent } from 'ngx-countdown';
+import { ProdudoroService } from 'src/app/produdoro/service/produdoro.service';
+import { SessaoService } from '../../../service/sessao.service';
+import { SessionSetting } from '../../../service/setting.enum';
+
 
 @Component({
   selector: 'app-pausa-longa',
@@ -11,7 +17,10 @@ export class PausaLongaComponent implements OnInit {
   @ViewChild('cd', { static: false })
   private countdown!: CountdownComponent;
 
-  constructor() {}
+  constructor(
+    private produdoroService: ProdudoroService,
+    private router: Router,
+    private sessao: SessaoService) {}
   ngOnInit(): void {}
 
   config: CountdownConfig = {
@@ -19,18 +28,54 @@ export class PausaLongaComponent implements OnInit {
     format: 'mm:ss',
     demand: true,
   };
-  
+  notify = '';
   pausa: boolean = true;
-  
+
   iniciaCronometro(){
+    this.tocaInicioProdudoro();
     this.config;
     this.countdown.begin();
     this.pausa = !this.pausa;
   }
 
   pausaCronometro(){
+    this.tocaInicioProdudoro();
     this.config;
     this.countdown.pause()
     this.pausa = !this.pausa;
+  }
+
+  avancaStatus(){
+    const resultado = confirm("Tem certeza de que deseja terminar a rodada mais cedo? (O tempo restante não será contado no relatório.)");
+    if (resultado){
+      this.produdoroService.limpaContadorPomodoro();
+      this.router.navigate(["/foco"]);
+    } else {
+      this.countdown.resume();
+    }
+  }
+
+  tocaInicioProdudoro(){
+    let som = new Audio();
+    som.src = "../../../../../assets/sons/inicioFoco.mp3";
+    som.load();
+    som.play();
+  }
+
+  tocaSomProdudoro(){
+    let som = new Audio();
+    som.src = "../../../../../assets/sons/fimFoco.mp3";
+    som.load();
+    som.play();
+  }
+
+  handleEvent(e: CountdownEvent) {
+    console.log('Notify', e);
+   if ( e.action === "done") {
+    this.tocaSomProdudoro();
+    this.produdoroService.limpaContadorPomodoro();
+    this.produdoroService.showMessage("Sua pausa longa acabou !");
+    this.router.navigate(["/foco"]);  
+    }
   }
 }

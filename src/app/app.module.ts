@@ -7,19 +7,23 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ProdudoroModule } from './produdoro/produdoro.module';
 import { CountdownModule } from 'ngx-countdown';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    HttpClientModule,
     NoopAnimationsModule,
     ProdudoroModule,
-    CountdownModule
+    CountdownModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

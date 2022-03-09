@@ -6,6 +6,8 @@ import { PausaCurtaComponent } from './components/pausa-curta/pausa-curta/pausa-
 import { PausaLongaComponent } from './components/pausa-longa/pausa-longa/pausa-longa.component';
 import { FocoComponent } from './components/foco/foco.component';
 import { CountdownModule } from 'ngx-countdown';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 
 @NgModule({
@@ -17,7 +19,8 @@ import { CountdownModule } from 'ngx-countdown';
   imports: [
     CommonModule,
     ProdudoroRoutingModule,
-    CountdownModule
+    CountdownModule,
+    MatSnackBarModule
   ]
 })
 export class ProdudoroModule { }
