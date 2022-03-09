@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FocoComponent } from './foco.component';
+import { PausaLongaComponent } from './pausa-longa.component';
 
-describe('FocoComponent', () => {
-  let component: FocoComponent;
-  let fixture: ComponentFixture<FocoComponent>;
+describe('PausaLongaComponent', () => {
+  let component: PausaLongaComponent;
+  let fixture: ComponentFixture<PausaLongaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FocoComponent ]
+      declarations: [ PausaLongaComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FocoComponent);
+    fixture = TestBed.createComponent(PausaLongaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

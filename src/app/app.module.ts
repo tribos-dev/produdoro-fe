@@ -11,6 +11,11 @@ import { ConfigurarComponent } from './home/configurar/configurar.component';
 import { CompartilhadoModule } from './compartilhado/compartilhado.module';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { ProdudoroModule } from './produdoro/produdoro.module';
+import { CountdownModule } from 'ngx-countdown';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HttpClientModule } from '@angular/common/http';
+
 
 const toastrConfig = {
   maxOpened: 1,
@@ -33,7 +38,12 @@ const toastrConfig = {
     NgxSpinnerModule,
     ToastrModule.forRoot(),
     NoopAnimationsModule,
-    CompartilhadoModule
+    CompartilhadoModule,
+    HttpClientModule,
+    NoopAnimationsModule,
+    ProdudoroModule,
+    CountdownModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
