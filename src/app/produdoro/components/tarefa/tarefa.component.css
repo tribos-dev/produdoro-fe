@@ -1,0 +1,31 @@
+.corpo-lista-tarefas{
+  background: none;
+  font: cabin, regular;
+  color:white;
+  width: 420px;
+  height: 60px;
+  margin: auto;
+}
+
+.cabecalho-tarefa{
+  border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.btn-adicionar-tarefa{
+  background: none;
+  font: cabin, regular;
+  color:white;
+  width: 420px;
+  height: 60px;
+  border-radius: 10px;
+  border-style: dashed;
+}
+
+.icone-btn-adicionar-tarefa{
+  padding-right: 6px;
+}
