@@ -7,6 +7,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { CompartilhadoModule } from './compartilhado/compartilhado.module';
 import { ToastrModule } from 'ngx-toastr';
+import { CountdownModule } from 'ngx-countdown';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ProdudoroModule } from './produdoro/produdoro.module';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -35,7 +36,8 @@ const toastrConfig = {
     HttpClientModule,
     NoopAnimationsModule,
     ProdudoroModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    CountdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]
