@@ -5,6 +5,9 @@ html, body {
 }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+<<<<<<< HEAD
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
+=======
 @font-face {
    font-family: Cabin-Regular;
    src: url(assets/fontes/Cabin-Regular.ttf);
@@ -14,3 +17,4 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
    font-family: Cabin-Bold;
    src: url(assets/fontes/Cabin-Bold.ttf);
 }
+>>>>>>> develop

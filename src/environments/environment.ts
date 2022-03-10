@@ -4,7 +4,11 @@
 
 export const environment = {
   production: false,
+<<<<<<< HEAD
+  apiUrl: ""
+=======
   apiUrl: "http://api.produdoro.dev/produdoro/v1/foco"
+>>>>>>> develop
 };
 
 /*
