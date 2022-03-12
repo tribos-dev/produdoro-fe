@@ -29,3 +29,9 @@
 .icone-btn-adicionar-tarefa{
   padding-right: 6px;
 }
+
+@media (max-width:480px){
+  .corpo-lista-tarefas, .cabecalho-tarefa, .btn-adicionar-tarefa {
+    width: 95%;
+  }
+}
