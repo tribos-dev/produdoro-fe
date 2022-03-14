@@ -1,3 +1,4 @@
+import { TamplateFormTarefaComponent } from './components/tamplate-form-tarefa/tamplate-form-tarefa.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -7,6 +8,7 @@ import { PausaLongaComponent } from './components/pausa-longa/pausa-longa/pausa-
 import { FocoComponent } from './components/foco/foco.component';
 import { CountdownModule } from 'ngx-countdown';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 
@@ -14,13 +16,15 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
   declarations: [
     FocoComponent,
     PausaCurtaComponent,
-    PausaLongaComponent
+    PausaLongaComponent,
+    TamplateFormTarefaComponent
   ],
   imports: [
     CommonModule,
     ProdudoroRoutingModule,
     CountdownModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatFormFieldModule
   ]
 })
 export class ProdudoroModule { }

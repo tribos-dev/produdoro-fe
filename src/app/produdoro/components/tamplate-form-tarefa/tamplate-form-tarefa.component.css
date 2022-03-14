@@ -1,0 +1,59 @@
+.body-form {
+  padding: 5px;
+  max-width: 420px;
+  min-height: 312px;
+  margin: 10px auto;
+  border-radius: 10px;
+  background-color: #0d2a42;
+}
+
+.input-form-geral {
+  display: block;
+  margin: 10px 10px;
+  background-color: #17334a;
+  border-radius: 10px;
+  border-style: none;
+  font-size: 23px;
+  text-align: left;
+  padding: 2px;
+}
+.input-nome-tarefa {
+  width: 380px;
+  height: 60px;
+}
+
+.titulo-repeticao {
+  margin: 10px;
+  color: white;
+  font-size: 20px;
+  display: inline-block;
+}
+
+.input-repeticao {
+  width: 110px;
+  height: 60px;
+}
+.botao-geral {
+  font-size: 20px;
+  color: white;
+  border: none;
+  display: inline;
+  border-radius: 10px;
+  height: 60px;
+  width: 120px;
+  margin: 10px 5px;
+}
+
+.botao-deletar {
+  background-color: #0d2a42;
+  margin-right: 5px;
+  text-align: left;
+}
+
+.botao-cancelar {
+  background-color: #17334a;
+}
+
+.botao-salvar {
+  color: #001228;
+}
