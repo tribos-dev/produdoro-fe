@@ -30,6 +30,10 @@
   padding-right: 6px;
 }
 
+.mostra-form{
+  display: none;
+}
+
 @media (max-width:480px){
   .corpo-lista-tarefas, .cabecalho-tarefa, .btn-adicionar-tarefa {
     width: 95%;

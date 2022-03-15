@@ -11,5 +11,9 @@ export class TarefaComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  mostra : boolean = true;
 
+  mostraForm(){
+    this.mostra = !this.mostra;
+  }
 }
