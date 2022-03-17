@@ -4,41 +4,57 @@
   </div>
 
   <div class="corpo-lista-tarefas">
-    <form class="body-form mostra-form" [ngClass]="{'mostra-form': mostra}">
+    <form
+      #f="ngForm"
+      (ngSubmit)="onSubmit(f)"
+      class="body-form mostra-form"
+      [ngClass]="{ 'mostra-form': mostra }"
+    >
       <div>
         <input
-        class="input-form-geral input-nome-tarefa"
-        type="text"
-        name="nomeTarefa"
-        placeholder="  Nome da Tarefa"
+          class="input-form-geral input-nome-tarefa"
+          type="text"
+          name="nomeTarefa"
+          placeholder="  Nome da Tarefa"
+          [(ngModel)]="formTarefa.nome"
         />
       </div>
       <div>
-      <label class="titulo-repeticao" for="nome">Repetições</label>
-      <input
-      class="input-form-geral input-repeticao"
-      type="text"
-      name="nomeTarefa"
-      placeholder="  2"
-      />
+        <label class="titulo-repeticao" for="repeticaoTarefa">Repetições</label>
+        <input
+          class="input-form-geral input-repeticao"
+          type="text"
+          name="repeticaoTarefa"
+          placeholder="  2"
+          [(ngModel)]="formTarefa.repeticao"
+        />
       </div>
+
       <div>
         <button class="botao-geral botao-deletar">Deletar</button>
         <button class="botao-geral botao-cancelar">Cancelar</button>
-        <button type="submit" class="botao-geral botao-salvar">Salvar</button>
+        <button
+          (click)="mostraForm()"
+          type="submit"
+          class="botao-geral botao-salvar"
+        >
+          Salvar
+        </button>
       </div>
     </form>
+
+    <div>
+      <p>Título da tarefa: {{ formTarefa.nome }}</p>
+      <p>Repetições: {{ formTarefa.repeticao }}</p>
+    </div>
+
     <button (click)="mostraForm()" class="btn-adicionar-tarefa">
-      <img class="icone-btn-adicionar-tarefa" src="../../../../assets/icones/Ícone Add Tarefa.svg" height="25">
+      <img
+        class="icone-btn-adicionar-tarefa"
+        src="../../../../assets/icones/Ícone Add Tarefa.svg"
+        height="25"
+      />
       Adicionar Tarefa
     </button>
   </div>
 </body>
-
-
-
-
-
-
-
-
