@@ -1,38 +1,39 @@
-<div class="corpo-lista-tarefas">
-  <span class="cabecalho-tarefa">Tarefas</span>
-</div>
+<body>
+  <div class="corpo-lista-tarefas">
+    <span class="cabecalho-tarefa">Tarefas</span>
+  </div>
 
-<div class="corpo-lista-tarefas">
-<<<<<<< HEAD
-  <form class="body-form mostra-form" [ngClass]="{'mostra-form': mostra}">
-    <div>
+  <div class="corpo-lista-tarefas">
+    <form class="body-form mostra-form" [ngClass]="{'mostra-form': mostra}">
+      <div>
+        <input
+        class="input-form-geral input-nome-tarefa"
+        type="text"
+        name="nomeTarefa"
+        placeholder="  Nome da Tarefa"
+        />
+      </div>
+      <div>
+      <label class="titulo-repeticao" for="nome">Repetições</label>
       <input
-      class="input-form-geral input-nome-tarefa"
+      class="input-form-geral input-repeticao"
       type="text"
       name="nomeTarefa"
-      placeholder="  Nome da Tarefa"
+      placeholder="  2"
       />
-    </div>
-    <div>
-     <label class="titulo-repeticao" for="nome">Repetições</label>
-     <input
-     class="input-form-geral input-repeticao"
-     type="text"
-     name="nomeTarefa"
-     placeholder="  2"
-     />
-    </div>
-    <div class="modal-footer">
-      <button class="botao-geral botao-deletar">Deletar</button>
-      <button class="botao-geral botao-cancelar">Cancelar</button>
-      <button class="botao-geral botao-salvar">Salvar</button>
-    </div>
-  </form>
-  <button (click)="mostraForm()" class="btn-adicionar-tarefa">
-    <img class="icone-btn-adicionar-tarefa" src="../../../../assets/icones/Ícone Add Tarefa.svg" height="25">
-    Adicionar Tarefa
-  </button>
-</div>
+      </div>
+      <div>
+        <button class="botao-geral botao-deletar">Deletar</button>
+        <button class="botao-geral botao-cancelar">Cancelar</button>
+        <button type="submit" class="botao-geral botao-salvar">Salvar</button>
+      </div>
+    </form>
+    <button (click)="mostraForm()" class="btn-adicionar-tarefa">
+      <img class="icone-btn-adicionar-tarefa" src="../../../../assets/icones/Ícone Add Tarefa.svg" height="25">
+      Adicionar Tarefa
+    </button>
+  </div>
+</body>
 
 
 
@@ -40,14 +41,4 @@
 
 
 
-=======
-  <button class="btn-adicionar-tarefa">
-    <img
-      class="icone-btn-adicionar-tarefa"
-      src="../../../../assets/icones/Ícone Add Tarefa.svg"
-      height="25"
-    />
-    Adicionar Tarefa
-  </button>
-</div>
->>>>>>> 004fd20d8a94663d2bf83420557052fe71f101c4
+
