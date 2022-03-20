@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CountdownModule } from 'ngx-countdown';
+import { MatListModule } from '@angular/material/list';
 
 import { FocoComponent } from './components/foco/foco.component';
 import { PausaCurtaComponent } from './components/pausa-curta/pausa-curta/pausa-curta.component';
@@ -10,12 +11,14 @@ import { PausaLongaComponent } from './components/pausa-longa/pausa-longa/pausa-
 import { TarefaComponent } from './components/tarefa/tarefa.component';
 import { ProdudoroRoutingModule } from './produdoro-routing.module';
 
+
 @NgModule({
   declarations: [
     FocoComponent,
     PausaCurtaComponent,
     PausaLongaComponent,
-    TarefaComponent,
+    TarefaComponent
+
   ],
   imports: [
     CommonModule,
@@ -23,6 +26,7 @@ import { ProdudoroRoutingModule } from './produdoro-routing.module';
     CountdownModule,
     MatSnackBarModule,
     FormsModule,
+    MatListModule,
   ],
 })
 export class ProdudoroModule {}

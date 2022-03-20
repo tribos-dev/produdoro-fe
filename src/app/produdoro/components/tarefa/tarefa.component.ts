@@ -1,3 +1,4 @@
+import { TarefaAdicionada } from './../../interface/tarefaAdicionada';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,26 +7,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tarefa.component.css'],
 })
 export class TarefaComponent implements OnInit {
-  formTarefa: any = {
-    nome: '',
-    repeticao: '',
-  };
-
-  onSubmit(form: any) {
-    console.log(this.formTarefa);
-    this.formTarefa;
-  }
+  mostra: boolean = true;
+  formTarefa: TarefaAdicionada = {titulo:'', repeticao:0};
+  listaTarefas: TarefaAdicionada[] = [];
 
   constructor() {}
 
-  ngOnInit(): void {}
-  mostra: boolean = true;
+  ngOnInit(): void {
+    this.formTarefa = new TarefaAdicionada();
+  }
+
+  onSubmit() {
+    this.listaTarefas.push(this.formTarefa);
+  }
 
   mostraForm() {
     this.mostra = !this.mostra;
   }
 
-  mostraTarefa(mostra: boolean) {
-    this.mostra = mostra;
+  adicionaNovaTarefa (){
+    this.formTarefa = new TarefaAdicionada();
   }
 }
