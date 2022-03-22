@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+<<<<<<< HEAD
+  apiUrl: ""
+=======
+  apiUrl: "http://api.produdoro.dev/produdoro/v1/foco"
+>>>>>>> develop
 };
 
 /*

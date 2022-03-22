@@ -1,0 +1,35 @@
+<body>
+    <p class="title">Produdoro</p>
+
+    <div class="main">
+        <button class="x-icon" (click)="fechar()">x</button>
+        <p class="name">Configurações</p>
+
+        <p class="time">Tempo(minutos)</p>
+        <div class="modos">
+            <label for="">
+                <p>Foco</p>
+                <input type="number" maxlength="2">
+            </label>
+
+            <label for="">
+                <p>Pausa curta</p>
+                <input type="number" max="2">
+            </label>
+
+            <label>
+                <p>Pausa longa</p>
+                <input type="number" max="2"  class="long-stop">
+            </label>
+
+        </div>
+        <label class="long">
+            <p>Repetições para pausa longa</p>
+            <input type="number">
+        </label>
+
+        <div class="finish">
+            <button (click)="fechar()" class="concluir">Concluir</button>
+        </div>
+    </div>
+</body>
