@@ -52,6 +52,7 @@ body{
   display: block;
   margin: 10px 10px;
   background-color: #17334a;
+  color: aliceblue;
   border-radius: 10px;
   border-style: none;
   font-size: 23px;
@@ -97,6 +98,10 @@ body{
 
 .botao-salvar {
   color: #001228;
+}
+
+.teste{
+  color: black;
 }
 
 @media (max-width:480px){
