@@ -100,8 +100,20 @@ body{
   color: #001228;
 }
 
-.teste{
-  color: black;
+.list-group{
+  color: white;
+  background-color: #0d2a42;
+}
+
+.list-group-item {
+  color: white;
+  background-color: #0d2a42;
+}
+
+.icone-btn-editar-tarefa {
+  width: auto;
+  height: 16px;
+  background-color: #0d2a42;
 }
 
 @media (max-width:480px){
