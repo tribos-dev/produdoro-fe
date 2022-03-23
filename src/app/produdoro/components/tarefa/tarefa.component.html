@@ -4,19 +4,22 @@
   </div>
 
   <div class="corpo-lista-tarefas">
-    <div *ngFor="let tarefa of listaTarefas">
-      <ul class="list-group teste">
-        <li class="list-group-item d-flex justify-content-between align-items-center">{{ tarefa.titulo }}
-          <span class="badge badge-pill">{{ tarefa.repeticao }}</span>
+    <div class="list-group" *ngFor="let tarefa of listaTarefas">
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <span>{{ tarefa.titulo }}</span>
+          <span class="span-tarefa-repeticao">{{
+            tarefa.repeticao
+          }}</span>
+          <img
+            class="icone-btn-editar-tarefa"
+            src="../../../../assets/icones/kebab.png"
+            alt="imagem-menu-editar"
+          />
         </li>
       </ul>
-    <div>
-        
-      </div>
-      <div>
-        <img src="" alt="" />
-      </div>
     </div>
+
     <form
       #f="ngForm"
       (ngSubmit)="onSubmit()"
