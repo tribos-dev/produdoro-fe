@@ -114,6 +114,7 @@ body{
   width: auto;
   height: 16px;
   background-color: #0d2a42;
+  cursor: pointer;
 }
 
 @media (max-width:480px){

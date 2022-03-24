@@ -8,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TarefaComponent implements OnInit {
   mostra: boolean = true;
-  formTarefa: TarefaAdicionada = {titulo:'', repeticao:0};
+  formTarefa: TarefaAdicionada = { titulo: '', repeticao: 0 };
   listaTarefas: TarefaAdicionada[] = [];
+  editar: boolean = true;
 
   constructor() {}
 
@@ -19,13 +20,23 @@ export class TarefaComponent implements OnInit {
 
   onSubmit() {
     this.listaTarefas.push(this.formTarefa);
+    console.log(this.formTarefa);
   }
 
   mostraForm() {
     this.mostra = !this.mostra;
   }
 
-  adicionaNovaTarefa (){
+  adicionaNovaTarefa() {
+
     this.formTarefa = new TarefaAdicionada();
+
+  }
+
+  editaTarefa() {
+    this.mostraForm();
+    this.formTarefa = this.formTarefa;
+    return this.formTarefa;
+
   }
 }
