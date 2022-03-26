@@ -12,7 +12,8 @@
             tarefa.repeticao
           }}</span>
           <img
-            (click)="editaTarefa()"
+            #imgEditar
+            (mousedown)="editaTeste($event)"
             class="icone-btn-editar-tarefa"
             src="../../../../assets/icones/kebab.png"
             alt="imagem-menu-editar"
@@ -50,7 +51,7 @@
       </div>
 
       <div>
-        <button class="botao-geral botao-deletar">Deletar</button>
+        <button class="botao-geral botao-deletar" ngfor="">Deletar</button>
         <button class="botao-geral botao-cancelar">Cancelar</button>
         <button
           (click)="mostraForm()"
@@ -63,7 +64,7 @@
     </form>
     <button
       (click)="mostraForm()"
-      (click)="adicionaNovaTarefa()"
+      (click)="adicionaNovaTarefa(formTarefa.id, formTarefa.titulo, formTarefa.repeticao)"
       class="btn-adicionar-tarefa"
     >
       <img
