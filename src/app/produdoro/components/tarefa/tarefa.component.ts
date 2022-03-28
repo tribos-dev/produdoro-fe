@@ -35,12 +35,15 @@ export class TarefaComponent implements OnInit {
 
   editaTarefa(id: number, tarefa: TarefaAdicionada) {
     const index = this.listaTarefas.findIndex((s) => s.id == id);
-    this.listaTarefas.splice(index, 1, tarefa);
     this.formTarefa = this.listaTarefas[index];
     console.log(this.formTarefa);
   }
 
-  //atualizaTarefa()
+  atualizaTarefa(id: number, tarefa: TarefaAdicionada) {
+    const index = this.listaTarefas.findIndex((s) => s.id == id);
+    this.listaTarefas[index] = tarefa;
+
+  }
 
   limpaForm() {
     //não consegui efetuar a aplicabilidade
