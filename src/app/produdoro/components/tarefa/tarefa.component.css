@@ -110,11 +110,14 @@ body{
   background-color: #0d2a42;
 }
 
-.icone-btn-editar-tarefa {
+.icone-btn-deletar-tarefa {
   width: auto;
   height: 16px;
   background-color: #0d2a42;
   cursor: pointer;
+  border-radius: 2px;
+  border-color: white;
+  margin:2px;
 }
 
 @media (max-width:480px){

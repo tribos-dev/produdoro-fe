@@ -29,20 +29,9 @@ export class TarefaComponent implements OnInit {
     this.formTarefa = new TarefaAdicionada(id, titulo, repeticao);
   }
 
-  editaTeste(event: MouseEvent) {
-    console.log(event);
-  }
-
-  editaTarefa(id: number, tarefa: TarefaAdicionada) {
+  deleteTarefa(id: number) {
     const index = this.listaTarefas.findIndex((s) => s.id == id);
-    this.formTarefa = this.listaTarefas[index];
-    console.log(this.formTarefa);
-  }
-
-  atualizaTarefa(id: number, tarefa: TarefaAdicionada) {
-    const index = this.listaTarefas.findIndex((s) => s.id == id);
-    this.listaTarefas[index] = tarefa;
-
+    this.listaTarefas.splice(index, 1);
   }
 
   limpaForm() {
