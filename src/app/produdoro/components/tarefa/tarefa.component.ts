@@ -1,13 +1,11 @@
 import { TarefaAdicionada } from './../../interface/tarefaAdicionada';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
-
 @Component({
   selector: 'app-tarefa',
   templateUrl: './tarefa.component.html',
   styleUrls: ['./tarefa.component.css'],
 })
-
 export class TarefaComponent implements OnInit {
   mostra: boolean = true;
   formTarefa: TarefaAdicionada = { id: 0, titulo: '', repeticao: 1 };
@@ -31,18 +29,22 @@ export class TarefaComponent implements OnInit {
     this.formTarefa = new TarefaAdicionada(id, titulo, repeticao);
   }
 
-  editaTeste(event: MouseEvent){
+  editaTeste(event: MouseEvent) {
     console.log(event);
-
   }
 
-  editaTarefa(id: number, tarefa: TarefaAdicionada){
+  editaTarefa(id: number, tarefa: TarefaAdicionada) {
     const index = this.listaTarefas.findIndex((s) => s.id == id);
     this.listaTarefas.splice(index, 1, tarefa);
+    this.formTarefa = this.listaTarefas[index];
+    console.log(this.formTarefa);
   }
 
-  deleteTarefa(id: number){
-    const index = this.listaTarefas.findIndex((s) => s.id == id);
-    this.listaTarefas.splice(index, 1);
+  //atualizaTarefa()
+
+  limpaForm() {
+    //não consegui efetuar a aplicabilidade
+    this.formTarefa.titulo = '';
+    this.formTarefa.repeticao = 1;
   }
 }

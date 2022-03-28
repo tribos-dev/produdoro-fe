@@ -6,14 +6,67 @@
   <div class="corpo-lista-tarefas">
     <div class="list-group" *ngFor="let tarefa of listaTarefas">
       <ul class="list-group">
-        <li class="list-group-item d-flex justify-content-between align-items-center">
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center"
+        >
           <span>{{ tarefa.titulo }}</span>
-          <span class="span-tarefa-repeticao">{{
-            tarefa.repeticao
-          }}</span>
+          <span class="span-tarefa-repeticao">{{ tarefa.repeticao }}</span>
+
+          <div
+          [ngClass]="{ 'mostra-form': mostra }"
+          *ngIf="tarefa.id">
+            <form
+              #f="ngForm"
+              (ngSubmit)="onSubmit()"
+              class="body-form mostra-form"
+
+            >
+              <div>
+                <input
+                  class="input-form-geral input-nome-tarefa"
+                  type="text"
+                  name="Titulo"
+                  placeholder="  Nome da Tarefa"
+                  [(ngModel)]="tarefa.titulo"
+                  required
+                />
+              </div>
+              <div>
+                <label class="titulo-repeticao" for="repeticaoTarefa"
+                  >Repetições</label
+                >
+                <input
+                  class="input-form-geral input-repeticao"
+                  type="number"
+                  name="repeticaoTarefa"
+                  placeholder="  2"
+                  [(ngModel)]="tarefa.repeticao"
+                  required
+                />
+              </div>
+
+              <div>
+                <button class="botao-geral botao-deletar" ngfor="">
+                  Deletar
+                </button>
+                <button class="botao-geral botao-cancelar">Cancelar</button>
+                <button
+                  (click)="mostraForm()"
+                  
+                  type="submit"
+                  class="botao-geral botao-salvar"
+                >
+                  Salvar
+                </button>
+              </div>
+            </form>
+          </div>
+
           <img
+            (click)="mostraForm()"
+            [title]="'Editar Tarefa'"
             #imgEditar
-            (mousedown)="editaTeste($event)"
+            (click)="editaTarefa(tarefa.id, tarefa)"
             class="icone-btn-editar-tarefa"
             src="../../../../assets/icones/kebab.png"
             alt="imagem-menu-editar"
@@ -64,7 +117,13 @@
     </form>
     <button
       (click)="mostraForm()"
-      (click)="adicionaNovaTarefa(formTarefa.id, formTarefa.titulo, formTarefa.repeticao)"
+      (click)="
+        adicionaNovaTarefa(
+          formTarefa.id,
+          formTarefa.titulo,
+          formTarefa.repeticao
+        )
+      "
       class="btn-adicionar-tarefa"
     >
       <img
