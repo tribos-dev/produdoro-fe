@@ -1,17 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body {
-   height: 100%;
+  height: 100%;
 }
+
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
+
 @font-face {
-   font-family: Cabin-Regular;
-   src: url(assets/fontes/Cabin-Regular.ttf);
+  font-family: Cabin-Regular;
+  src: url(assets/fontes/Cabin-Regular.ttf);
 }
 
 @font-face {
    font-family: Cabin-Bold;
    src: url(assets/fontes/Cabin-Bold.ttf);
 }
+
 

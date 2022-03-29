@@ -1,0 +1,286 @@
+body{
+    background-color: rgb(0, 18, 40);
+}
+
+.title{
+    color: white;
+    font-size: 1.8rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    padding: 3rem 0 1rem 0;
+    margin-left: 26rem;
+}
+
+.main{
+    background-color: rgb(74, 159, 195);
+    justify-content: center;
+    display: flex;
+    margin: 0 30.7rem 0 26rem;
+    padding: 1rem 16.8rem 0 16.7rem;
+    border-radius: 5px 5px 0 0;
+}
+
+.x-icon{
+    background-color: transparent;
+    z-index: 1;
+    display: block;
+    position: fixed;
+    font-size: 2.5rem;
+    margin: 0 0 100rem 30rem;
+    border: none;
+    color: white;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+
+}
+
+.name{
+    background-color: rgb(74, 159, 195);
+    position: absolute;
+    display: block;
+    color: white;
+    font-size: 1.8rem;
+    padding: 2rem 11rem 1rem 11rem;
+    margin: 0 26rem 0 26rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.time{
+    background-color: rgb(74, 159, 195);
+    position: absolute;
+    display: block;
+    margin-top: 4.5rem; 
+    padding: 2.5rem 24.1rem 2.5rem 1.5rem;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+
+.modos{
+    background-color: rgb(74, 159, 195);
+    position: absolute;
+    margin: 9rem 0 0 0;
+    padding: 0 0 1rem 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.long-stop{
+    margin: 0.5rem 2rem 0 0 ;
+}
+
+p{
+    color: lightgray;
+    font-size: 1.1rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+input{
+    width: 9rem;
+    background-color: rgb(74, 141, 195);
+    padding: 1rem 0 1rem 1rem;
+    margin: 0rem 1.5rem 0 0;
+    border-radius: 5px;
+    border: none;
+}
+
+.long{
+    position: absolute;
+    margin: 17rem 0 4rem 0;
+    background-color: rgb(74, 159, 195);
+    padding: 0 18.1rem 7rem 1.5rem;
+    border-radius: 0 0 5px 5px;
+}
+
+.concluir{
+    position: absolute;
+    background-color: white;
+    border-radius: 5px;
+    border: none;
+    margin: 25rem 0 0 1.5rem;
+    padding: 1rem 13rem 1rem 13rem;
+    font-size: 1.2rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+}
+
+.finish{
+    background-color: rgb(74, 159, 195);
+    margin:0 33.5rem 6rem 0;
+}
+
+@media screen and (max-width: 1024px) {
+    
+    .main{
+        margin: 0 10rem 0 10rem
+    }
+
+    .title{
+        font-size: 2.5rem;
+    }
+
+    .x-icon{
+        margin: 0 0 105rem 40rem;
+    }
+
+    .name{
+        font-size: 2rem;
+    }
+    
+    .time{
+        font-size: 1.3rem;
+        margin: 6rem 0rem 2.5rem 0rem;
+        padding: 2.5rem 33.2rem 2.5rem 1.5rem;
+    }
+
+    .modos{
+        margin: 12.5rem 10rem 10rem 10rem;
+        padding: 0 0 2rem 2rem;
+    }
+
+    .long-stop{
+        margin: 0 2rem 0 0 ;
+    }
+
+    p{
+        font-size: 1.3rem;
+    }
+
+    .long{
+        margin: 21rem 12rem 4rem 12rem;
+        padding: 0 28rem 7rem 2rem;
+    }
+
+    input{
+        width: 12rem;
+        margin: 0rem 2rem 0 0;
+    }
+
+    .concluir{
+        margin: 31rem 0 0 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .name{
+        padding: 2rem 15.7rem 1rem 15.6rem;
+    }
+
+    .main{
+        padding: 1rem 15rem 0 15rem;
+        margin: 0 2rem 0 2rem;
+    }
+
+    .title{
+        margin-left: 18rem;
+    }
+    
+}
+
+@media  screen and (max-width: 375px) {
+    .title{
+        color: white;
+        font-size: 1.5rem;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 500;
+        padding: 1.5rem 0 0 0;
+        margin-left: 7rem;
+    }
+
+    .main{
+        background-color: transparent;
+        justify-content: center;
+        display: flex;
+        margin-left: 0rem;
+        padding: 1rem 0rem 0 0rem;
+        border-radius: 5px 5px 0 0;
+    }
+
+    .x-icon{
+        background-color: transparent;
+        z-index: 1;
+        display: block;
+        position: fixed;
+        font-size: 1.1rem;
+        margin: 0 0  30rem 14rem;
+        border: none;
+        color: white;
+        font-family: 'M PLUS Rounded 1c', sans-serif;
+    
+    }
+
+    .name{
+        background-color: rgb(74, 159, 195);
+        position: absolute;
+        display: block;
+        color: white;
+        font-size: 1rem;
+        padding: 1rem 5rem 0 5rem;
+        margin-left: 25rem;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        border-radius: 5px 5px 0 0 ;
+    }
+
+    .time{
+        background-color: rgb(74, 159, 195);
+        position: absolute;
+        display: block;
+        margin: 2.4rem 1rem 0 0; 
+        padding: 1rem 9.6rem 1rem 1rem;
+        color: white;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 400;
+        font-size: 0.8rem;
+    }
+
+    .modos{
+        background-color: rgb(74, 159, 195);
+        position: absolute;
+        margin: 5rem 1rem 0 0;
+        padding: 0 0 0 0.7rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .long-stop{
+        margin: 0 none;
+    }
+
+    p{
+        font-size: 0.7rem;
+    }
+
+    input{
+        width: 3.2rem;
+        background-color: rgb(74, 141, 195);
+        margin-right: 2rem;
+        padding: 0;
+        border-radius: 5px;
+        border: none;
+    }
+
+    .long{
+        position: absolute;
+        margin: 9rem 1rem 0 0;
+        background-color: rgb(74, 159, 195);
+        padding: 0 7rem 3.5rem 0.5rem;
+        border-radius: 0 0 5px 5px;
+    }
+
+    .concluir{
+        position: absolute;
+        background-color: white;
+        border-radius: 5px;
+        border: none;
+        margin: 13.5rem 0 0 0;
+        padding: 0.2rem 4rem;
+        font-size: 1rem;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 600;
+    }
+
+    .finish{
+        background-color: rgb(74, 159, 195);
+        margin-right: 13rem;
+    }
+}

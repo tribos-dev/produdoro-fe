@@ -1,0 +1,30 @@
+<body>
+    <p class="title">Produdoro</p>
+
+    <div class="cadastro">
+        <p class="name">Cadastro</p>
+    </div>
+
+    <form (ngSubmit)="onSubmit">
+        <div class="inputs">
+            <label class="email">
+                <input 
+                type="email" 
+                placeholder="Email"  
+                >
+            </label>
+            <br>
+            <label for="">
+                <input 
+                type="text" 
+                placeholder="Senha"
+                >
+                <small>mínimo 6 caracteres</small>
+            </label>
+            <button type="submit" class="concluir" (click)="fechar()" >Concluir</button>
+        </div>
+    </form>
+
+    <p class="possui">Já possui uma conta?</p>
+    <button class="connect">Conectar-se</button>
+</body>
