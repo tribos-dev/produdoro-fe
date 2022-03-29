@@ -7,7 +7,6 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   {
     path: '',
-<<<<<<< HEAD
     pathMatch:'full',
     redirectTo: 'home',
   },
@@ -18,19 +17,17 @@ const routes: Routes = [
   {
     path: 'configurar',
     component: ConfigurarComponent
-  
+
   },
   {
     path: 'cadastro',
-    component: CadastroComponent
-=======
+    component: CadastroComponent,
     pathMatch: 'full',
     redirectTo: 'foco'
   },
   {
     path: 'foco',
     loadChildren: () => import('./produdoro/produdoro.module').then(m => m.ProdudoroModule)
->>>>>>> develop
   }
 ];
 
