@@ -6,7 +6,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CountdownModule } from 'ngx-countdown';
 import { CadastroComponent } from '../home/cadastro/cadastro.component';
 import { ConfigurarComponent } from '../home/configurar/configurar.component';
-import { HomeComponent } from '../home/home.component';
+
 import { FocoComponent } from './components/foco/foco.component';
 import { PausaCurtaComponent } from './components/pausa-curta/pausa-curta/pausa-curta.component';
 import { PausaLongaComponent } from './components/pausa-longa/pausa-longa/pausa-longa.component';
@@ -19,7 +19,6 @@ import { ProdudoroRoutingModule } from './produdoro-routing.module';
 
 @NgModule({
   declarations: [
-  HomeComponent,
   CadastroComponent,
   ConfigurarComponent,
   FocoComponent,

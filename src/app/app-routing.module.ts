@@ -2,17 +2,17 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastroComponent } from './home/cadastro/cadastro.component';
 import { ConfigurarComponent } from './home/configurar/configurar.component';
-import { HomeComponent } from './home/home.component';
+
 
 const routes: Routes = [
   {
     path: '',
     pathMatch:'full',
-    redirectTo: 'home',
+    redirectTo: 'foco'
   },
   {
-    path: 'home',
-    component: HomeComponent,
+    path: 'foco',
+    loadChildren: () => import('./produdoro/produdoro.module').then(m => m.ProdudoroModule)
   },
   {
     path: 'configurar',
@@ -23,12 +23,7 @@ const routes: Routes = [
     path: 'cadastro',
     component: CadastroComponent,
     pathMatch: 'full',
-    redirectTo: 'foco'
   },
-  {
-    path: 'foco',
-    loadChildren: () => import('./produdoro/produdoro.module').then(m => m.ProdudoroModule)
-  }
 ];
 
 @NgModule({
