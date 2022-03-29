@@ -2,16 +2,12 @@
   <div class="corpo-lista-tarefas">
     <span class="cabecalho-tarefa">Tarefas</span>
   </div>
-
   <div class="corpo-lista-tarefas">
     <div class="list-group" *ngFor="let tarefa of listaTarefas">
-      <ul class="list-group">span-tarefa-repeticao
-        <li
-          class="list-group-item d-flex justify-content-between"
-        >
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between">
           <span>{{ tarefa.titulo }}</span>
-          <span class="span-tarefa-repeticao">{{ tarefa.repeticao }}</span>
-
+          <span>{{ tarefa.repeticao }}</span>
           <img
             [title]="'Apagar Tarefa'"
             (click)="deleteTarefa(tarefa.id)"
@@ -22,7 +18,6 @@
         </li>
       </ul>
     </div>
-
     <form
       #f="ngForm"
       (ngSubmit)="onSubmit()"
@@ -50,10 +45,10 @@
           required
         />
       </div>
-
       <div>
         <button class="botao-geral botao-deletar" ngfor="">Deletar</button>
-        <button class="botao-geral botao-cancelar">Cancelar</button>
+        <button class="botao-geral botao-cancelar" (click)="mostraForm()">Cancelar
+        </button>
         <button
           (click)="mostraForm()"
           type="submit"
@@ -63,16 +58,7 @@
         </button>
       </div>
     </form>
-    <button
-      (click)="mostraForm()"
-      (click)="
-        adicionaNovaTarefa(
-          formTarefa.id,
-          formTarefa.titulo,
-          formTarefa.repeticao
-        )
-      "
-      class="btn-adicionar-tarefa"
+    <button (click)="mostraForm()" (click)="adicionaNovaTarefa(formTarefa.id,formTarefa.titulo,formTarefa.repeticao)" class="btn-adicionar-tarefa"
     >
       <img
         class="icone-btn-adicionar-tarefa"
@@ -83,3 +69,4 @@
     </button>
   </div>
 </body>
+
